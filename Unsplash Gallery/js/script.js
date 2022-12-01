@@ -14,8 +14,8 @@ $('document').ready(function () {
     fetch(apiUrl).then((r) => r.json()).then((json) => {
       console.log(json);
 
-      function renderCards(int, renderedHtml, cardsSection) {
-        for (i = int; i < json.length; i += 3) {
+      function renderCards(counter, renderedHtml, cardsSection) {
+        for (i = counter; i < json.length; i += 3) {
           renderedHtml +=
             '<div class="card-container" data-id="' + json[i].id + '" data-card-num=' + i + ' data-like-count=' + json[i].likes + '> ' +
             '    <img class="card-display-img" src="' + json[i].urls.regular + '" alt="' + json[i].alt_description + '" data-img-src="' + json[i].urls.regular + '"> ' +
